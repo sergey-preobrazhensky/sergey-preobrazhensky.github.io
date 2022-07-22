@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #mpc81e728d9d4c2f636f067f89cc14862c * {
+            box-sizing: border-box;
+            font-size: 14px;
+            font-family: sans-serif;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__item {
+            width: 100%;
+            padding: 8px 0;
+            min-height: 42px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__item_inline {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__item_inline .form__label {
+            margin: 0 16px 0 0;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* кнопка */
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__button {
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            font-weight: 500;
+            color: white;
+            padding: 11px 16px;
+            background: #0D6EFD;
+            border-radius: 4px;
+            filter: drop-shadow(0px 10px 15px rgba(13, 110, 253, 0.3)) drop-shadow(0px 5px 5px rgba(13, 110, 253, 0.2)) drop-shadow(0px 2px 2px rgba(13, 110, 253, 0.2));
+        }
+
+        /* инпут */
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__input {
+            outline: none;
+            width: 100%;
+            color: #494949;;
+            padding: 8px;
+            background: #F7F7F7;
+            border: 1px solid #D4D4D4;
+            border-radius: 4px;
+        }
+
+        /* выпадающий список и все для него */
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown {
+            position: relative;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown__header {
+            cursor: pointer;
+            display: block;
+            position: relative;
+            width: 100%;
+            color: #494949;
+            padding: 8px;
+            background: #F7F7F7;
+            border: 1px solid #D4D4D4;
+            border-radius: 4px;
+            height: 34px;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown__header::after {
+            display: block;
+            content: '';
+            border: 5px solid transparent;
+            border-top: 5px solid #939393;
+            position: absolute;
+            top: 14px;
+            right: 14px;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown__checkbox_hidden:checked ~ .form__dropdown__header::after {
+            transform: rotate(180deg) translateY(5px);
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown__checkbox_hidden {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown__content {
+            display: none;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+            border: 1px solid #D4D4D4;
+            border-radius: 4px;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown__checkbox_hidden:checked ~ .form__dropdown__content {
+            display: block;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown__option {
+            width: 100%;
+            color: #494949;
+            padding: 8px;
+            background: #F7F7F7;
+            cursor: pointer;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown__option:first-child {
+            border-radius: 4px 4px 0 0;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown__option:last-child {
+            border-radius: 0 0 4px 4px;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__dropdown__option:hover {
+            background: #0D6EFD;
+            color: white;
+        }
+
+        /* Чекбокс и все для него */
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__checkbox_hidden {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__checkbox {
+            width: 24px;
+            height: 24px;
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__checkbox__icon {
+            display: block;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__checkbox_hidden:checked ~ .form__checkbox .form__checkbox__icon {
+            display: none;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__checkbox__icon_checked {
+            display: none;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__checkbox_hidden:checked ~ .form__checkbox .form__checkbox__icon_checked {
+            display: block;
+        }
+
+        /* лейбл */
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__label {
+            margin: 0;
+            margin-bottom: 4px;
+        }
+
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__label_required::after {
+            position: relative;
+            content: ' *';
+            color: red;
+        }
+
+        /* ошибка */
+        #mpc81e728d9d4c2f636f067f89cc14862c .form__error {
+            color: red;
+            display: none;
+            text-align: center;
+        }
+
+        /* успешный текст */
+        #mpc81e728d9d4c2f636f067f89cc14862c .success {
+            padding: 100px 24px;
+            text-align: center;
+            font-size: 32px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body><script>
+    function requiredValidator(value) {
+        return !!value
+    }
+
+    const formType = 'deal'
+    const contractorType = 'human'
+
+    const formData = {
+        'description': {
+            name: 'description',
+            value: null,
+            validators: [],
+            type: 'input'
+        },
+        'contractor.firstName': {
+            name: 'contractor.firstName',
+            value: null,
+            validators: [requiredValidator],
+            type: 'input'
+        },
+        'contractor.lastName': {
+            name: 'contractor.lastName',
+            value: null,
+            validators: [requiredValidator],
+            type: 'input'
+        },
+    }
+
+    function showError(text) {
+        const error = document.querySelector('#mpc81e728d9d4c2f636f067f89cc14862c.form .form__error')
+        error.style.display = 'block'
+        error.innerHTML = text
+    }
+
+    function hideError() {
+        document.querySelector('#mpc81e728d9d4c2f636f067f89cc14862c.form .form__error').style.display = 'none'
+    }
+
+    function showSuccess(text) {
+        document.querySelector('#mpc81e728d9d4c2f636f067f89cc14862c.form').style.display = 'none'
+        const success = document.querySelector('.success')
+        success.style.display = 'block'
+        success.innerHTML = text
+    }
+
+    function setField(fieldName, value) {
+        hideError()
+        formData[fieldName].value = value
+    }
+
+    function getContentTypeForContractor(contractorType) {
+        if (contractorType === 'human') {
+            return 'ContractorHuman'
+        }
+
+        return 'ContractorCompany'
+    }
+
+    async function send() {
+        const fields = Object.values(formData)
+
+        const isValid = fields.map(
+            item => item.validators.map(
+                validator => validator(item.value)
+            ).filter(Boolean).length === item.validators.length
+        ).filter(Boolean).length === fields.length
+
+
+        const contactInfo = [];
+
+        if (isValid) {
+            const request = fields.reduce((dataObj, item) => {
+                if (['email','phone'].includes(item.type)){
+                    contactInfo.push(item.value)
+                    return dataObj
+                }
+
+                if (item.name.startsWith("contractor.")) {
+                    if (!dataObj.contractor) {
+                        dataObj.contractor = {
+                            contentType: getContentTypeForContractor(contractorType)
+                        }
+                    }
+
+                    dataObj.contractor[item.name.replace("contractor.", "")] = item.value
+                } else {
+                    dataObj[item.name] = item.value
+                }
+                return dataObj
+            }, {})
+
+            if (formType === 'deal') {
+                request.contentType = 'Deal'
+                if (!!request.contractor){
+                    request.contractor.contactInfo = contactInfo
+                }
+            } else {
+                request.contentType = getContentTypeForContractor(contractorType)
+                request.contactInfo = contactInfo
+            }
+
+            fetch('https://ra.megaplan.ru/api/v3/customLeadForm/2/process/deal', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(request)
+            }).then(() => showSuccess('Данные успешно отправлены'));
+        } else {
+            showError('Заполните все обязательные поля')
+        }
+    }
+</script>
+<section style="max-width:600px;">
+    <div id="mpc81e728d9d4c2f636f067f89cc14862c" class="form">
+        <div class="form__item">
+            <p class="form__label">Суть</p>
+            <input type="text"
+                   class="form__input"
+                   placeholder="Суть"
+                   oninput="setField('description', this.value)">
+        </div>
+        <div class="form__item">
+            <p class="form__label form__label_required">КЛИЕНТ:: Имя</p>
+            <input type="text"
+                   class="form__input"
+                   placeholder="Имя"
+                   oninput="setField('contractor.firstName', this.value)">
+        </div>
+        <div class="form__item">
+            <p class="form__label form__label_required">КЛИЕНТ:: Фамилия</p>
+            <input type="text"
+                   class="form__input"
+                   placeholder="Фамилия"
+                   oninput="setField('contractor.lastName', this.value)">
+        </div>
+        <div class="form__item" onclick="send()">
+            <button class="form__button">Отправить</button>
+        </div>
+        <div class="form__item form__error"></div>
+    </div>
+    <div class="success"></div>
+</section>
+
+</body>
+</html>
